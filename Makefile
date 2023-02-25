@@ -6,7 +6,7 @@
 #    By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/21 10:34:24 by ysensoy           #+#    #+#              #
-#    Updated: 2023/02/25 23:23:53 by mtemel           ###   ########.fr        #
+#    Updated: 2023/02/25 23:44:43 by mtemel           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCS = $(wildcard *.c built-in/*.c check_token/*.c executor/*.c expand/*.c funct
 OBJ = $(SRCS:.c = .o)
 
 $(NAME): $(OBJ)
-	@$(CC) $(CLAFGS) $(SRCS) -lreadline -L -I -o $(NAME)
+	@$(CC) $(CLAFGS) $(SRCS) $(pkg-config --cflags --libs readline) -lreadline -L -I -o $(NAME)
 	@echo "\033[1;92mCOMPILATION SUCCESSFUL\033[0m"
 
 #$(CC) $(CLAFGS) $(SRCS) -lreadline -L "realine_path" -I "realine_path" -o $(NAME)
