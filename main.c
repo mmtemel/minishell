@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 12:43:06 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/14 15:01:01 by yasinsensoy      ###   ########.fr       */
+/*   Updated: 2023/02/25 22:48:47 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
+
+t_g_shell	*g_shell;
 
 void	handle_siginit(int signum)
 {
@@ -54,7 +56,7 @@ void	appointment(char **env)
 	printf("██║ ╚═╝ ██║██║██║ ╚████║██║███████║██║  ██║███████╗███████╗███████╗\n");
 	printf("╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚═╝╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝\n");
 	g_shell = malloc(sizeof(t_g_shell));
-	g_shell->name = "\033[1;93m@yasinshell> \033[0m";
+	g_shell->name = "\033[1;93m@minishell> \033[0m";
 	g_shell->environ = env;
 	ft_fill();
 	signal(SIGINT, handle_siginit);

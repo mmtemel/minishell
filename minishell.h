@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 13:57:23 by mtemel            #+#    #+#             */
-/*   Updated: 2023/01/11 12:32:25 by ysensoy          ###   ########.fr       */
+/*   Updated: 2023/02/25 22:38:14 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ typedef struct s_g_shell
 	int		fpid;
 }	t_g_shell;
 
-t_g_shell	*g_shell;
+extern t_g_shell	*g_shell;
 
 void	delete_node(t_list **head, char *str);
 int		isnamequal(char *str, char *content);
